@@ -40,7 +40,7 @@ async function processResults() {
             instance_count: workload.instanceCount
         };
 
-        const response = await fetch('http://127.0.0.1:5001/predict', {
+        const response = await fetch('/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(apiPayload)
@@ -85,7 +85,7 @@ async function processResults() {
 
     } catch (error) {
         console.error('Prediction error:', error);
-        alert('Failed to get prediction from server.\nMake sure Flask is running on port 5001.\n\nError: ' + error.message);
+        alert('Failed to get prediction from server.\n\nError: ' + error.message);
     } finally {
         document.getElementById('loading-container').style.display = 'none';
         document.getElementById('results-content').style.display = 'block';

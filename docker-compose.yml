@@ -1,0 +1,19 @@
+services:
+  autoscaling-ml-system:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: autoscaling-ml-system:latest
+    container_name: autoscaling-ml-system
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - FLASK_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped

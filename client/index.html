@@ -22,7 +22,7 @@
 
             for (const page of pages) {
                 try {
-                    const res = await fetch(`/${page}.html`);
+                    const res = await fetch(`/${page}.html`, { headers: { 'X-Page-Fragment': 'true' } });
                     const html = await res.text();
                     pagesContainer.innerHTML += html;
                 } catch (error) {

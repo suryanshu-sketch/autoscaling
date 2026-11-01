@@ -467,14 +467,14 @@ async function processResults() {
 
     // Map frontend pattern values to what the model expects
     const patternMap = {
-        'scheduled': 'cyclic',
-        'gradual': 'cyclic',
+        'scheduled': 'stable',
+        'gradual': 'gradual',
         'stable': 'stable',
         'spiky': 'spiky',
-        'cyclic': 'cyclic'
+        'cyclic': 'stable'
     };
     
-    const mappedPattern = patternMap[workload.pattern] || 'stable';
+    const mappedPattern = patternMap[workload.pattern] || workload.pattern || 'stable';
 
     try {
         // Prepare payload exactly as Flask expects
@@ -487,7 +487,7 @@ async function processResults() {
             instance_count: workload.instanceCount || 1
         };
 
-        const response = await fetch('https://autoscalingsystem.up.railway.app/predict', {
+        const response = await fetch('/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(apiPayload)
