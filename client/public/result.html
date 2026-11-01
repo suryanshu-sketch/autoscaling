@@ -1,0 +1,89 @@
+<!-- Results Page -->
+<div id="page-result" class="page">
+    <div class="results-container">
+        <div class="results-header">
+            <h2>Autoscaling Strategy Recommendation</h2>
+            <p class="subtitle">Based on your workload analysis</p>
+        </div>
+
+        <!-- Loading Spinner (shown initially) -->
+        <div id="loading-container" class="loading-spinner">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Results Content (hidden initially) -->
+        <div id="results-content" style="display: none;">
+            <!-- Workload Summary -->
+            <div class="summary-card">
+                <h3>📊 Workload Summary</h3>
+                <div class="summary-item">
+                    <span class="summary-label">Load Pattern</span>
+                    <span class="summary-value" id="summary-pattern">-</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">CPU Variance</span>
+                    <span class="summary-value" id="summary-variance">-</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Peak CPU</span>
+                    <span class="summary-value" id="summary-peak-cpu">-</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Average CPU</span>
+                    <span class="summary-value" id="summary-avg-cpu">-</span>
+                </div>
+            </div>
+
+            <!-- Main Recommendation -->
+            <div class="recommendation-card">
+                <h3>🎯 Recommended Strategy</h3>
+                <div class="recommendation-strategy" id="recommendation-strategy">
+                    Hybrid Scaling
+                </div>
+                <div class="recommendation-score">
+                    Score: <span id="recommendation-score">85</span>/100
+                </div>
+                <div style="margin-top: var(--spacing-lg); font-size: var(--font-size-lg);">
+                    Confidence: <span id="recommendation-confidence">88</span>%
+                </div>
+            </div>
+
+            <!-- Explanation -->
+            <div class="explanation-card">
+                <h3>💡 Why This Strategy?</h3>
+                <p id="explanation-text">
+                    This strategy was chosen because your workload exhibits specific characteristics that align with its strengths.
+                </p>
+            </div>
+
+            <!-- Strategy Comparison -->
+            <div class="comparison-table">
+                <h3 style="margin-bottom: var(--spacing-lg);">📈 Strategy Comparison</h3>
+                
+                <div id="strategy-bars">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Strategy</th>
+                            <th>Cost Efficiency</th>
+                            <th>Latency</th>
+                            <th>Stability</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparison-tbody">
+                        <!-- Dynamically populated -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="loadPage('index')">← Start Over</button>
+                <button class="btn-outline" onclick="downloadResults()">📥 Download Results</button>
+            </div>
+        </div>
+    </div>
+</div>

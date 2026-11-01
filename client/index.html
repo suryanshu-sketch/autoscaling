@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Autoscaling Strategy Evaluation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app"></div>
+
+    <!-- Load all pages -->
+    <div id="pages"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Load all page HTML files
+        async function loadPages() {
+            const pages = ['index', 'guided', 'expert', 'result'];
+            const pagesContainer = document.getElementById('pages');
+
+            for (const page of pages) {
+                try {
+                    const res = await fetch(`/${page}.html`);
+                    const html = await res.text();
+                    pagesContainer.innerHTML += html;
+                } catch (error) {
+                    console.error(`Failed to load ${page}.html:`, error);
+                }
+            }
+
+            // Initialize the app
+            loadPage('index');
+        }
+
+        // Load pages when DOM is ready
+        document.addEventListener('DOMContentLoaded', loadPages);
+    </script>
+</body>
+</html>

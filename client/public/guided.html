@@ -1,0 +1,194 @@
+<!-- Guided Questionnaire Flow -->
+<div id="page-guided" class="page">
+    <div class="wizard-container">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-label">
+                Step <span id="current-step">1</span> of 5
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" style="width: 20%;"></div>
+            </div>
+        </div>
+
+        <!-- STEP 1: Who are you? -->
+        <div class="wizard-step active" data-step="1">
+            <h2>Who are you?</h2>
+            <div class="form-group">
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="organization" value="student" required>
+                        <span>Student</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="organization" value="startup" required>
+                        <span>Startup</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="organization" value="company" required>
+                        <span>Company</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="organization" value="enterprise" required>
+                        <span>Enterprise</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="organization" value="developer" required>
+                        <span>Individual Developer</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 2: What are you building? -->
+        <div class="wizard-step" data-step="2">
+            <h2>What are you building?</h2>
+            <div class="form-group">
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="workload" value="web-app" required>
+                        <span>Web App</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="workload" value="mobile-backend" required>
+                        <span>Mobile Backend</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="workload" value="ecommerce" required>
+                        <span>E-commerce</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="workload" value="gaming" required>
+                        <span>Gaming</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="workload" value="ml-ai" required>
+                        <span>ML/AI</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="workload" value="iot" required>
+                        <span>IoT</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="workload" value="analytics" required>
+                        <span>Analytics</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 3: User traffic pattern? -->
+        <div class="wizard-step" data-step="3">
+            <h2>User traffic pattern?</h2>
+            <div class="form-group">
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="traffic" value="steady" required>
+                        <span>Steady</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="traffic" value="business hours" required>
+                        <span>Business Hours</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="traffic" value="unpredictable" required>
+                        <span>Unpredictable</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="traffic" value="event-driven" required>
+                        <span>Event-Driven</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="traffic" value="growing fast" required>
+                        <span>Growing Fast</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 4: Priorities (multi-select) -->
+        <div class="wizard-step" data-step="4">
+            <h2>What are your priorities? (Select all that apply)</h2>
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="priorities" value="cost">
+                        <span>Minimize cost</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="priorities" value="latency">
+                        <span>Low latency</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="priorities" value="availability">
+                        <span>High availability</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="priorities" value="growth">
+                        <span>Handle growth</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="priorities" value="carbon">
+                        <span>Reduce carbon</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 5: Scale & Peak Usage -->
+        <div class="wizard-step" data-step="5">
+            <h2>Scale & Peak Usage</h2>
+            
+            <div class="form-group">
+                <label>Current user scale:</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="scale" value="<1k" required>
+                        <span>&lt;1k users</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="scale" value="1k–10k" required>
+                        <span>1k–10k users</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="scale" value="10k–100k" required>
+                        <span>10k–100k users</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="scale" value="100k+" required>
+                        <span>100k+ users</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Peak usage pattern:</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="peak-usage" value="dont-know" required>
+                        <span>Don't know</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="peak-usage" value="daytime" required>
+                        <span>Daytime</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="peak-usage" value="events" required>
+                        <span>Events</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="peak-usage" value="always-on" required>
+                        <span>Always On</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="wizard-buttons">
+            <button class="btn-outline" id="back-btn" onclick="guidedPreviousStep()" style="display: none;">← Back</button>
+            <button class="btn-primary" id="next-btn" onclick="guidedNextStep()">Next →</button>
+            <button class="btn-primary" id="finish-btn" onclick="guidedFinish()" style="display: none;">Finish</button>
+        </div>
+    </div>
+</div>

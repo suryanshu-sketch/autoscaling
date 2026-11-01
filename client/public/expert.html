@@ -1,0 +1,114 @@
+<!-- Expert Input Mode -->
+<div id="page-expert" class="page">
+    <div class="wizard-container">
+        <h2>Expert Mode: Direct Input</h2>
+        <p style="margin-bottom: var(--spacing-2xl); color: var(--text-secondary);">
+            Enter your workload metrics directly for precise evaluation
+        </p>
+
+        <form id="expert-form" onsubmit="expertSubmit(event)">
+            <!-- CPU Metrics -->
+            <div class="form-group">
+                <label for="peak-cpu">Peak CPU Usage (%)</label>
+                <input 
+                    type="number" 
+                    id="peak-cpu" 
+                    name="peakCPU" 
+                    min="0" 
+                    max="100" 
+                    step="1"
+                    placeholder="e.g., 85"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="avg-cpu">Average CPU Usage (%)</label>
+                <input 
+                    type="number" 
+                    id="avg-cpu" 
+                    name="avgCPU" 
+                    min="0" 
+                    max="100" 
+                    step="1"
+                    placeholder="e.g., 45"
+                    required
+                >
+            </div>
+
+            <!-- Variance -->
+            <div class="form-group">
+                <label>CPU Variance</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="variance" value="low" required>
+                        <span>Low (±10%)</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="variance" value="medium" required>
+                        <span>Medium (±20%)</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="variance" value="high" required>
+                        <span>High (±30%+)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Duration -->
+            <div class="form-group">
+                <label for="duration">Observation Duration (hours)</label>
+                <input 
+                    type="number" 
+                    id="duration" 
+                    name="duration" 
+                    min="1" 
+                    max="8760"
+                    step="1"
+                    placeholder="e.g., 24"
+                    required
+                >
+            </div>
+
+            <!-- Pattern -->
+            <div class="form-group">
+                <label>Load Pattern</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="pattern" value="stable" required>
+                        <span>Stable (consistent load)</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="pattern" value="spiky" required>
+                        <span>Spiky (sudden spikes)</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="pattern" value="gradual" required>
+                        <span>Gradual (slow growth)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Instance Count -->
+            <div class="form-group">
+                <label for="instance-count">Current Instance Count</label>
+                <input 
+                    type="number" 
+                    id="instance-count" 
+                    name="instanceCount" 
+                    min="1" 
+                    max="10000"
+                    step="1"
+                    placeholder="e.g., 5"
+                    required
+                >
+            </div>
+
+            <!-- Submit Button -->
+            <div class="wizard-buttons">
+                <button type="button" class="btn-outline" onclick="loadPage('index')">← Back</button>
+                <button type="submit" class="btn-primary">Evaluate Strategy</button>
+            </div>
+        </form>
+    </div>
+</div>
